@@ -1,0 +1,96 @@
+$--color-white: #fff;
+$--color-black: #000;
+$--color-prm: #233a95;
+$--color-mix: #3e445a;
+$--color-mix-light-80:  mix($--color-white, $--color-mix, 80%);
+$--color-mix-light-70:  mix($--color-white, $--color-mix, 70%);
+$--color-mix-light-60:  mix($--color-white, $--color-mix, 60%);
+$--color-mix-light-50:  mix($--color-white, $--color-mix, 50%);
+$--color-mix-light-40:  mix($--color-white, $--color-mix, 40%);
+$--color-mix-light-30:  mix($--color-white, $--color-mix, 30%);
+$--color-mix-light-20:  mix($--color-white, $--color-mix, 20%);
+$--color-mix-light-10:  mix($--color-white, $--color-mix, 10%);
+
+$themeRoot: (
+  color: (
+    'background': #fff,
+    'primary': #233a95,
+    'secondary': #2bbef9,
+    'price': #d51243,
+    'rating': #ffcd00,
+    'text': #202435,
+    'text-light': #3e445a,
+    'text-lighter': #71778e,
+    'light': #f7f8fd,
+    'lighter': #fbfcfe,
+    'border': #e4e5ee,
+    'border-dark': #d9d9e9,
+    'border-light': #edeef5,
+    'info': #c2c2d3,
+    'info-dark': #9b9bb4,
+    'info-light': #f3f3f6,
+    'success': #00b853,
+    'success-dark': #038e42,
+    'success-light': #e5f8ed,
+    'danger': #ed174a,
+    'danger-dark': #be143c,
+    'danger-light': #ffeef2,
+    'warning': #ff6048,
+    'warning-dark': #ea2b0f,
+    'warning-light': #ffefec,
+    'form-background': #f3f4f7,
+    'placeholder': #9595a9
+  ),
+  font: (
+    'primary': ('Inter', sans-serif),
+    'secondary': ('Dosis', sans-serif)
+  ),
+  size: (
+    'border-radius': 7px,
+    'form-radius': 4px
+  )
+);
+
+// Social Media Color
+$facebook: #3b5998;
+$forumbee: #86ac2f;
+$instagram: #fd1d1d;
+$instagram-gradient: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+$pinterest: #e60023;
+$spotify: #1db954;
+$twitch: #9146ff;
+$whatsapp: #25d366;
+$github: #000;
+$odnoklassniki: #ed812b;
+$amazon: #ff9900;
+$dropbox: #007ee5;
+$snapchat: #fffc00;
+$foursquare: #f94877;
+$lastfm: #d51007;
+$skype: #00aff0;
+$stackoverflow: #f48024;
+$twitter: #1da1f2;
+$xing: #cfdc00;
+$tripadvisor: #00af87;
+$vimeo: #1ab7ea;
+$codeopen: #000;
+$dribbble: #ea4c89;
+$google: #ea4335;
+$linkedin: #0077b5;
+$slack: #3eb991;
+$stumbleupon: #eb4924;
+$vine: #00b488;
+$yelp: #af0606;
+$pocket: #ef4056;
+$quora: #a82400;
+$behance: #1769ff;
+$delicious: #3399ff;
+$paypal: #003087;
+$soundcloud: #ff8800;
+$tumblr: #35465c;
+$vkontakte: #45668e;
+$youtube: #ff0000;
+$fivepx: #34bf49;
+$deviantart: #05cc47;
+$codiepie: #000;
+$reddit: #ff4500;

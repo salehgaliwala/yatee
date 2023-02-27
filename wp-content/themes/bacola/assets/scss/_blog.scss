@@ -1,0 +1,388 @@
+.site-posts {
+  position: relative;
+  .post {
+    margin-bottom: 1.875rem;
+    @include min-break(1024) {
+      margin-bottom: 7.5rem;
+    }
+    .post-thumbnail {
+      margin-bottom: .75rem;
+      @include min-break(1024) {
+        margin-bottom: 1.875rem;
+      }
+      a {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        border-radius: getSize(border-radius);
+      }
+    }
+    .entry-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: .9375rem;
+      @include min-break(768) {
+        font-size: 2.25rem;
+      }
+      a {
+        color: getColor(text);
+        text-decoration: none;
+      }
+    }
+    .entry-meta {
+      @include min-break(768) {
+        margin-bottom: 1.875rem;
+      }
+    }
+    .entry-content {
+      p {
+        font-size: .9375rem;
+        line-height: 1.8;
+      }
+    }
+  }
+}
+
+// Post
+.post {
+  .entry-category {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: .625rem;
+    a {
+      position: relative;
+      font-family: getFont(secondary);
+      font-size: .8125rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: getColor(info-dark);
+      margin-right: .75rem;
+      & + a {
+        &::before {
+          content: ',';
+        }
+      }
+      &:last-child {
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+  .entry-meta {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: .625rem;
+    .meta-item {
+      font-size: .8125rem;
+      margin-right: .625rem;
+      a {
+        color: getColor(text);
+      }
+      &.entry-published {
+        a {
+          color: getColor(text-lighter);
+        }
+      }
+      &.entry-author {
+        .meta-separator {
+          font-family: 'Times New Roman', Times, serif;
+          font-style: italic;
+          color: getColor(text-lighter);
+        }
+        a {
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+// Blog Single
+.single-post {
+  .post-header {
+    margin-bottom: 1.25rem;
+    @include min-break(1024) {
+      margin-bottom: 2.25rem;
+    }
+    .entry-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: .9375rem;
+      @include min-break(768) {
+        font-size: 2.25rem;
+      }
+    }
+    .post-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .entry-meta {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .post-thumbnail {
+    position: relative;
+    overflow: hidden;
+    border-radius: getSize(border-radius);
+    margin-bottom: 1.25rem;
+    @include min-break(1024) {
+      margin-bottom: 1.875rem;
+    }
+  }
+  blockquote {
+    position: relative;
+    @include min-break(1024) {
+      padding-left: 6.25rem;
+      padding-right: 2.5rem;
+      margin-top: 2.5rem;
+      margin-bottom: 2.5rem;
+      &::before {
+        position: absolute;
+        font-family: "klbtheme";
+        font-size: 4.125rem;
+        line-height: 1;
+        content: '\e8ce';
+        top: 0;
+        left: 0;
+        opacity: .15;
+      }
+    }
+    p {
+      font-size: 1.125rem;
+      font-weight: 600;
+      @include min-break(1024) {
+        font-size: 1.5rem;
+        line-height: 1.6;
+      }
+    }
+  }
+  .post-footer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.875rem;
+    padding-top: 1.875rem;
+    border-top: 1px solid getColor(border);
+    @include min-break(1024) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 3.75rem;
+      padding-top: 2.5rem;
+    }
+  }
+  .post-tags {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1;
+    span {
+      font-family: getFont(secondary);
+      font-size: .75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      width: 100%;
+      margin-bottom: .625rem;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li {
+        display: inline-flex;
+        align-items: center;
+        font-size: .75rem;
+        font-weight: 500;
+        margin-right: 2px;
+        margin-bottom: 2px;
+        a {
+          display: inline-flex;
+          align-items: center;
+          height: 1.625rem;
+          border: 1px solid getColor(border);
+          border-radius: 1.5rem;
+          padding: 0 .75rem;
+          color: getColor(text-lighter);
+          text-decoration: none;
+          transition: all .2s $bezier;
+          &:hover {
+            color: getColor(text);
+            background-color: getColor(border-light);
+            border-color: getColor(border-light);
+          }
+        }
+      }
+    }
+  }
+  .post-author-bio {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: getColor(light);
+    border-radius: getSize(border-radius);
+    margin-top: 2.5rem;
+    padding: 1.875rem;
+    text-align: center;
+    @include min-break(992) {
+      flex-direction: row;
+      text-align: inherit;
+      padding: 2.5rem;
+    }
+    .author-avatar {
+      position: relative;
+      flex: 0 0 5.625rem;
+      max-width: 5.625rem;
+      height: 5.625rem;
+      overflow: hidden;
+      border-radius: 50%;
+      margin-bottom: 1.875rem;
+      @include min-break(992) {
+        margin-bottom: 0;
+        margin-right: 1.5rem;
+      }
+    }
+    .author-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: getColor(text);
+      a {
+        color: currentColor;
+        text-decoration: none;
+      }
+    }
+    p {
+      font-size: .8125rem;
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
+  }
+  .post-comments {
+    margin-top: 2.5rem;
+    & > .entry-title {
+      font-family: getFont(secondary);
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 1.875rem;
+    }
+    .comment-list {
+      margin: 0 0 2.5rem;
+      padding: 0;
+      list-style: none;
+    }
+    .comment-body {
+      padding: 1.5rem 0;
+    }
+    .comment-meta {
+      margin-bottom: 1rem;
+      .comment-author {
+        b {
+          float: left;
+          font-size: 1rem;
+          font-weight: 500;
+          a {
+            color: getColor(text);
+            text-decoration: none;
+          }
+        }
+        .comment-metadata {
+          float: left;
+          a {
+            font-size: .75rem;
+            color: getColor(text-lighter);
+            text-decoration: none;
+            margin-left: .9375rem;
+          }
+        }
+      }
+      .avatar {
+        float: left;
+        position: relative;
+        width: 4.25rem;
+        height: 4.25rem;
+        border-radius: 50%;
+        margin-right: 1.25rem;
+      }
+    }
+    .comment-content {
+      margin-top: 2.5rem;
+      padding-left: 5.5rem;
+      p {
+        font-size: .8125rem;
+      }
+    }
+    .reply {
+      font-size: .75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding-left: 5.5rem;
+      a {
+        color: getColor(text);
+        text-decoration: none;
+        &:hover {
+          color: getColor(primary);
+        }
+      }
+    }
+    .comment-respond {
+      padding: 1.25rem;
+      border: 1px solid getColor(border);
+      border-radius: getSize(border-radius);
+      @include min-break(1024) {
+        padding: 2.5rem;
+      }
+      & > .entry-title {
+        font-family: getFont(secondary);
+        font-weight: 600;
+        font-size: 1.25rem;
+        text-transform: uppercase;
+      }
+      .comment-notes {
+        font-size: .8125rem;
+        color: getColor(info);
+      }
+      .comment-form {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -.625rem;
+        margin-right: -.625rem;
+        label {
+          font-size: .8125rem;
+          font-weight: 500;
+        }
+        & > p {
+          flex: 0 0 100%;
+          max-width: 100%;
+          padding-left: .625rem;
+          padding-right: .625rem;
+        }
+        .comment-form-email, .comment-form-url {
+          @include min-break(768) {
+            flex: 0 0 50%;
+            max-width: 50%;
+          }
+        }
+        input {
+          height: 3rem;
+        }
+        textarea {
+          min-height: 9.375rem;
+        }
+        .form-submit {
+          margin-top: .625rem;
+          margin-bottom: 0;
+          & > * {
+            font-size: .8125rem;
+            @include min-break(768) {
+              padding-left: 3.25rem;
+              padding-right: 3.25rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+/* GDPR */
+.site-gdpr {
+	position: fixed;
+	max-width: 100%;
+	bottom: 20px;
+	left: 15px;
+	right: 15px;
+	background-color: #fff;
+	box-shadow: 0px 5px 30px rgba(0, 0, 0, .1);
+	border-radius: 8px;
+	z-index: 100;
+	padding: 20px;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transform: translateY(30px);
+}
+.site-gdpr.active {
+	pointer-events: auto;
+    z-index: 9999;
+}
+.gdpr-icon {
+	margin-bottom: 20px;
+}
+.gdpr-icon svg {
+  max-width: 66px;
+  max-height: 66px;
+}
+.gdpr-text {
+  font-size: 13px;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color: #3e445a;
+}
+.gdpr-text a {
+  font-weight: 500;
+  color: #ed174a;
+  text-decoration: underline;
+}
+.gdpr-button .button {
+  font-size: 12px;
+  color: #fff;
+}
+.gdpr-inner {
+  text-align: center;
+}
+@media screen and (max-width: 64rem) {
+  .site-gdpr.mobile-menu-active {
+    bottom: 60px;
+  }
+}
+@media screen and (min-width: 64rem) {
+  .site-gdpr {
+    bottom: 40px;
+    left: 40px;
+    padding: 30px;
+  }
+  .gdpr-text {
+    margin-bottom: 22px;
+  }
+}
+@media screen and (min-width: 36rem) {
+  .site-gdpr {
+    max-width: 360px;
+    width: 100%;
+  }
+}
+
+@media(max-width: 600px){
+	.gdpr-icon {
+		display: none;
+	}	
+}

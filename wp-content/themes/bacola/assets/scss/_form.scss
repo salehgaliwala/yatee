@@ -1,0 +1,300 @@
+input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], textarea, select {
+  display: inline-flex;
+  align-items: center;
+  font-family: getFont(primary);
+  font-size: .9375rem;
+  width: 100%;
+  height: 2.5rem;
+  padding: 0 .9375rem;
+  box-shadow: none;
+  outline: none;
+  appearance: none;
+  color: getColor(text);
+  background-color: getColor(form-background);
+  border: 1px solid transparent;
+  border-radius: getSize(form-radius);
+  transition: all .2s $bezier;
+  &::placeholder {
+    font-size: .875rem;
+    letter-spacing: -.3px;
+    color: getColor(placeholder);
+  }
+  &.small {
+    height: 2.25rem;
+  }
+  &.normal {
+    height: 2.625rem;
+  }
+  &.medium {
+    height: 2.75rem;
+  }
+  &.large {
+    height: 3.125rem;
+  }
+}
+
+textarea {
+  padding-top: .9375rem;
+  padding-bottom: .9375rem;
+}
+
+button, .button, input[type=submit], .submit {
+  display: inline-flex;
+  align-items: center;
+  font-family: getFont(primary);
+  height: 2.5rem;
+  font-size: .875rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0 .9375rem;
+  border: 1px solid;
+  color: #fff;
+  background-color: getColor(primary);
+  border-radius: getSize(form-radius);
+  border-color: transparent;
+  box-shadow: none;
+  outline: none;
+  appearance: none;
+  transition: all .2s $bezier;
+  @include min-break(768) {
+    padding: 0 1.25rem;
+  }
+  i {
+    margin-left: .625rem;
+  }
+  &:not(.button-text) {
+    &.button-default {
+      position: relative;
+      color: getColor(text-light);
+      border-color: getColor(border-dark);
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: getColor(primary);
+        opacity: 0;
+        z-index: -1;
+        transition: all .2s $bezier;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        top: -1px;
+        bottom: -1px;
+        left: -1px;
+        right: -1px;
+        border: 1px solid getColor(primary);
+        border-radius: getSize(form-radius);
+        opacity: 0;
+        transition: all .2s $bezier;
+      }
+      &:hover {
+        color: getColor(primary);
+        border-color: transparent;
+        &:before {
+          opacity: .1;
+        }
+        &:after {
+          opacity: .3;
+        }
+      }
+    }
+    &.button-primary {
+      color: #fff;
+      background-color: getColor(primary);
+      border-color: getColor(primary);
+      &:not(.plain) {
+        &:hover {
+          opacity: .8;
+        }
+      }
+      &.plain {
+        color: getColor(primary);
+        background-color: transparent;
+        &:hover {
+          color: #fff;
+          background-color: getColor(primary);
+        }
+      }
+    }
+    &.button-secondary {
+      color: #fff;
+      background-color: getColor(secondary);
+      border-color: getColor(secondary);
+      &:not(.plain) {
+        &:hover {
+          opacity: .8;
+        }
+      }
+      &.plain {
+        color: getColor(secondary);
+        background-color: transparent;
+        &:hover {
+          color: #fff;
+          background-color: getColor(secondary);
+        }
+      }
+    }
+    &.button-success {
+      color: #fff;
+      background-color: getColor(success);
+      border-color: getColor(success);
+      &:not(.plain) {
+        &:hover {
+          opacity: .8;
+        }
+      }
+      &.plain {
+        color: getColor(success);
+        background-color: transparent;
+        &:hover {
+          color: #fff;
+          background-color: getColor(success);
+        }
+      }
+    }
+    &.button-info {
+      color: getColor(info-dark);
+      background-color: getColor(info-light);
+      border-color: getColor(info-light);
+      &:hover {
+        color: #fff;
+        background-color: getColor(text-lighter);
+        border-color: getColor(text-lighter);
+      }
+    }
+    &.button-info-dark {
+      color: #fff;
+      background-color: getColor(info);
+      border-color: getColor(info);
+      &:hover {
+        color: #fff;
+        background-color: getColor(text-lighter);
+        border-color: getColor(text-lighter);
+      }
+    }
+    &.button-warning {
+      color: #fff;
+      background-color: getColor(warning);
+      border-color: getColor(warning);
+      &:not(.plain) {
+        &:hover {
+          opacity: .8;
+        }
+      }
+      &.plain {
+        color: getColor(warning);
+        background-color: transparent;
+        &:hover {
+          color: #fff;
+          background-color: getColor(warning);
+        }
+      }
+    }
+    &.button-danger {
+      color: #fff;
+      background-color: getColor(danger);
+      border-color: getColor(danger);
+      &:not(.plain) {
+        &:hover {
+          opacity: .8;
+        }
+      }
+      &.plain {
+        color: getColor(danger);
+        background-color: transparent;
+        &:hover {
+          color: #fff;
+          background-color: getColor(danger);
+        }
+      }
+    }
+    &.button-rating {
+      color: getColor(text);
+      background-color: getColor(rating);
+      border-color: getColor(rating);
+      &:not(.plain) {
+        &:hover {
+          opacity: .8;
+        }
+      }
+      &.plain {
+        color: getColor(rating);
+        background-color: transparent;
+        &:hover {
+          color: getColor(text);
+          background-color: getColor(rating);
+        }
+      }
+    }
+    &.button-price {
+      color: #fff;
+      background-color: getColor(price);
+      border-color: getColor(price);
+      &:not(.plain) {
+        &:hover {
+          opacity: .8;
+        }
+      }
+      &.plain {
+        color: getColor(price);
+        background-color: transparent;
+        &:hover {
+          color: #fff;
+          background-color: getColor(price);
+        }
+      }
+    }
+    &.button-info-default {
+      color: getColor(info-dark);
+      background-color: transparent;
+      border-color: getColor(border-dark);
+      &:hover {
+        color: getColor(text-lighter);
+      }
+    }
+    &.rounded {
+      border-radius: 1.875rem!important;
+    }
+    &.xsmall {
+      font-size: .75rem;
+      height: 2.125rem;
+      i {
+        font-size: .9375rem;
+      }
+    }
+    &.small {
+      font-size: .8125rem;
+      height: 2.25rem;
+    }
+    &.normal {
+      height: 2.625rem;
+    }
+    &.medium {
+      height: 2.75rem;
+    }
+    &.xmedium {
+      height: 2.875rem;
+    }
+    &.large {
+      height: 3.125rem;
+    }
+    &.wide {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  &.button-text {
+    padding: 0;
+    height: auto;
+    border: 0;
+    background-color: transparent;
+    color: currentColor;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+}

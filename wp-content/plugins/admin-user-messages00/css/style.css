@@ -1,0 +1,19 @@
+.input_backend {
+    display: inline-block;
+    vertical-align: top;
+    width: 300px; 
+}
+
+.aum_td {
+    padding: 5px;
+}
+
+
+table
+{
+width:100%;
+}
+th
+{
+height:50px;
+}

@@ -1,0 +1,210 @@
+.site-canvas {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 10001;
+  background-color: #fff;
+  transform: translateX(-100%);
+  @include min-break(420) {
+    width: 23.75rem;
+  }
+  .canvas-title {
+    padding: 1.25rem 1.25rem 0;
+    @include min-break(420) {
+      padding: 1.875rem 1.875rem 0;
+    }
+    .entry-title {
+      font-size: .8125rem;
+      font-weight: 500;
+      opacity: .3;
+    }
+  }
+  .canvas-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.25rem 0;
+    @include min-break(420) {
+      padding: 1.875rem 1.875rem .625rem;
+    }
+    .site-brand {
+      img {
+        height: 34px;
+      }
+    }
+    .close-canvas {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .8125rem;
+      width: 1.375rem;
+      height: 1.375rem;
+      color: #fff;
+      background-color: #c2c2d3;
+      border-radius: 50%;
+    }
+  }
+  .site-location {
+    padding: 1.25rem 1.25rem .625rem;
+    @include min-break(420) {
+      padding: 1.25rem 1.875rem .625rem;
+    }
+    a {
+      max-width: 100%;
+    }
+  }
+  .canvas-menu {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-top: 1px solid #edeef5;
+    border-bottom: 1px solid #edeef5;
+    .menu {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      .menu-item {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+        overflow: hidden;
+        & + .menu-item {
+          border-top: 1px solid #edeef5;
+        }
+        a {
+          position: relative;
+          display: flex;
+          align-items: center;
+          flex: 1;
+          font-family: getFont(secondary);
+          font-size: .9375rem;
+          font-weight: 600;
+          text-decoration: none;
+          color: #3e445a;
+          background-color: #fff;
+          width: 100%;
+          height: 3.125rem;
+          padding-left: 1.25rem;
+          transition: all .4s $bezier-second;
+          @include min-break(420) {
+            padding-left: 1.875rem;
+          }
+          &::after {
+            display: none;
+          }
+          i {
+            position: relative;
+            font-size: 130%;
+            margin-right: .9375rem;
+            opacity: .5;
+            top: -1px;
+            transition: opacity .4s $bezier-second;
+            &.klbth-icon-cup {
+              top: -2px;
+            }
+          }
+          svg {
+            fill: currentColor;
+            max-width: 1.125rem;
+            margin-right: .9375rem;
+          }
+        }
+        .menu-dropdown {
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+          justify-content: flex-end;
+          font-size: 75%;
+          height: 3.125rem;
+          text-shadow: 0px 0px 0px;
+          color: #202435;
+          background-color: #fff;
+          order: 2;
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
+          cursor: pointer;
+          transition: color .4s $bezier-second;
+          @include min-break(420) {
+            padding-right: 1.875rem;
+          }
+          i {
+            opacity: .4;
+            transition: opacity .4s $bezier-second, transform .4s $bezier-second;
+          }
+        }
+        &.active {
+          & > a {
+            color: #2bbef9;
+            i {
+              opacity: 1;
+            }
+          }
+          & > .menu-dropdown {
+            color: #2bbef9;
+            i {
+              opacity: 1;
+              transform: rotate(180deg);
+            }
+          }
+        }
+        .sub-menu {
+          width: 100%;
+          height: 0;
+          order: 3;
+          padding-left: 2.1875rem;
+          z-index: 0;
+          .menu-item {
+            border-top: 0;
+            a {
+              font-family: getFont(primary);
+              font-size: .8125rem;
+              font-weight: 500;
+              height: 2.5rem;
+            }
+            .menu-dropdown {
+              height: 2.5rem;
+            }
+          }
+        }
+      }
+    }
+    &.canvas-secondary {
+      .menu-item {
+        a {
+          font-family: getFont(primary);
+          font-size: .8125rem;
+        }
+      }
+    }
+  }
+  .canvas-footer {
+    padding-bottom: 1.875rem;
+    .site-copyright {
+      padding: 1.25rem 1.25rem 0;
+      @include min-break(420) {
+        padding: 1.875rem 1.875rem 0;
+      }
+      opacity: .5;
+    }
+    .canvas-menu {
+      margin-bottom: 0;
+      &.select-currency {
+        margin-top: -1px;
+      }
+      .menu-item {
+        .sub-menu {
+          padding-left: 1.25rem;
+          @include min-break(420) {
+            padding-left: 1.875rem;
+          }
+          a {
+            height: 2.125rem!important;
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
